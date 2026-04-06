@@ -39,7 +39,6 @@ export const AccordionToggle = ({ children }) => {
   };
   return (
     <div
-      onClick={onToggleClick}
       style={{
         backgroundColor: "green",
         padding: 10,
@@ -51,9 +50,9 @@ export const AccordionToggle = ({ children }) => {
       <div style={{ width: "90%", display: "flex", justifyContent: "center" }}>
         {children}
       </div>
-      <div style={{}}>
-        <p>{activePanel == id ? "Close" : "Open"}</p>
-      </div>
+        <button onClick={onToggleClick}>
+          {activePanel == id ? "Close" : "Open"}
+        </button>
     </div>
   );
 };
@@ -68,6 +67,7 @@ export const AccordionPanel = ({ children }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        margin:5
       }}
     >
       {children}
